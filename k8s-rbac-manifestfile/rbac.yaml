@@ -1,0 +1,23 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: nginx-role
+  namespace: rbac-test
+rules:
+- apiGroups: [""]
+  resources: ["pods"]
+  verbs: ["get", "list", "watch"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: nginx-role-binding
+  namespace: rbac-test
+subjects:
+- kind: ServiceAccount
+  name: basic-rbac-learn
+  namespace: rbac-test
+roleRef:
+  kind: ClusterRole
+  name: nginx-role
+  apiGroup: rbac.authorization.k8s.io

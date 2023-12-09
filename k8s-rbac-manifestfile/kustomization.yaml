@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+metadata:
+  namespace: rbac-test
+
+resources:
+- namespace.yaml
+- service-ac.yaml
+- deployment.yaml
+- service.yaml
+- ingress.yaml
+#- rbac.yaml
