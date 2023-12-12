@@ -90,6 +90,8 @@ volumeMounts: []
 # - name: foo
 #   mountPath: "/etc/foo"
 #   readOnly: true
+rbac:
+  create: true
 
 nodeSelector: {}
 
